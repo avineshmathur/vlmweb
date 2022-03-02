@@ -1,0 +1,28 @@
+// Global styling for this template
+
+html,
+body {
+  height: 100%;
+}
+
+// Set spacing on containers for page symmetry
+
+.container,
+.container-fluid {
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+.mandatorySign{
+  color: red !important;
+}
+.btncolour{
+  color: #fff;
+    background-color: black;
+    border-color: black;
+}
+.btn{
+  color: #fff;
+}
+.btncolour:hover{
+  color: #fff;
+}

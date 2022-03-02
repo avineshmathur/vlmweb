@@ -1,0 +1,203 @@
+<sb-layout-dashboard [static]="true">
+    <button class="btn btncolour"  style="float: right;  margin-right: 1%;" (click)="backclicked();">BACK</button>
+      <sb-dashboard-head title="owner" [hideBreadcrumbs]="false"></sb-dashboard-head> 
+     
+      
+  <div class="container-fluid">
+      <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+   </div>
+
+      
+     <div class="row">
+        <div class="col-xl-12 col-md-12 mb-4">
+          <div class="card shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col ">
+                    <form class="" [formGroup]="TransferRegister" (ngSubmit)="submit()" novalidate>
+                    <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Vehicle Details</div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                          <label class="titleBold">Engine Number<span class="mandatorySign">*</span></label>
+                          <input type="text" class="form-control" id="inputengineNumber" aria-describedby="newPasswordHelp" placeholder="" formControlName="engineNumber" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.engineNumber.valid }">
+                          <div *ngIf="submitt && !TransferRegister.controls.engineNumber.valid" class="invalid-feedback"> 
+                         {{ attributes.engineNumber }}
+                          </div> 
+                      </div>  
+                      <div class="col-sm-6">
+                          <label class="titleBold">Chassis Number<span class="mandatorySign">*</span></label>
+                          <input type="text" class="form-control" id="inputchassisNumber" aria-describedby="newPasswordHelp" placeholder="" formControlName="chassisNumber" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.chassisNumber.valid }">
+                                              <div *ngIf="submitt && !TransferRegister.controls.chassisNumber.valid" class="invalid-feedback"> 
+                                         {{ attributes.chassisNumber }}
+                                              </div>
+                      </div>  
+                                       
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                          <label class="titleBold">Invoice Amount<span class="mandatorySign">*</span></label>
+                          <input type="text" class="form-control" id="inputinvoiceAmount" aria-describedby="newPasswordHelp" placeholder="5,000, 000" formControlName="invoiceAmount" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.invoiceAmount.valid }">
+                                              <div *ngIf="submitt && !TransferRegister.controls.invoiceAmount.valid" class="invalid-feedback"> 
+                                         {{ attributes.invoiceAmount }}
+                                          </div>               
+                      </div>
+                                        
+                      <div class="col-sm-6">
+                          <label class="titleBold">Start Date<span class="mandatorySign">*</span></label>
+                          <input min="{{myDate}}" type="date" class="form-control" id="inputStartDate" aria-describedby="newPasswordHelp" placeholder="2021-02-24" formControlName="startDate" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.startDate.valid }">
+                          <div *ngIf="submitt && !TransferRegister.controls.startDate.valid" class="invalid-feedback"> 
+                          {{ attributes.startDate }}
+                              </div>                  
+                      </div>
+                    </div>
+                   
+                    <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Citizen Details</div>
+                    <div class="form-group row">
+                      <div class="col-sm-6 ">
+                                            <label class="titleBold">Name<span class="mandatorySign">*</span></label>
+                                            <input type="text" class="form-control" id="inputname" aria-describedby="newPasswordHelp" placeholder="Sandip" formControlName="name" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.name.valid }">
+                                  <div *ngIf="submitt && !TransferRegister.controls.name.valid" class="invalid-feedback"> 
+                                       {{ attributes.name }}
+                                        </div> 
+                      </div>
+                      <div class="col-sm-6">
+                                            <label class="titleBold">Date Of Birth<span class="mandatorySign">*</span></label>
+                                            <input min="{{myDate}}" type="date" class="form-control" id="inputdateOfBirth" aria-describedby="newPasswordHelp" placeholder="1990-02-12" formControlName="dateOfBirth" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.dateOfBirth.valid }">
+                                            <div *ngIf="submitt && !TransferRegister.controls.dateOfBirth.valid" class="invalid-feedback"> 
+                                       {{ attributes.dateOfBirth }}
+                                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-6 ">
+                                            <label class="titleBold">Aadhar Number<span class="mandatorySign">*</span></label>
+                                            <input type="text" class="form-control" id="inputaadharNumber" aria-describedby="newPasswordHelp" placeholder="7565875 43519" formControlName="aadharNumber" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.aadharNumber.valid }">
+                                            <div *ngIf="submitt && !TransferRegister.controls.aadharNumber.valid" class="invalid-feedback"> 
+                                       {{ attributes.aadharNumber }}
+                                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                                            <label class="titleBold">Address Proof<span class="mandatorySign">*</span></label>
+                                            <input type="text" class="form-control" id="inputaddressProof" aria-describedby="newPasswordHelp" placeholder="Electricity Bill" formControlName="addressProof" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.addressProof.valid }">
+                                            <div *ngIf="submitt && !TransferRegister.controls.addressProof.valid" class="invalid-feedback"> 
+                                       {{ attributes.addressProof }}
+                                        </div>
+                      </div>
+                    </div>
+                   
+                    <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Insurance Details</div>              
+                    <div class="form-group row">
+                              <div class="col-sm-6 ">
+                                                  <label class="titleBold">Insurer Company<span class="mandatorySign">*</span></label>
+                                                  <input type="text" class="form-control" id="inputinsurerCompany" aria-describedby="newPasswordHelp" placeholder="TATA AIG" formControlName="insurerCompany" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.insurerCompany.valid }">
+                                      <div *ngIf="submitt && !TransferRegister.controls.insurerCompany.valid" class="invalid-feedback"> 
+                                          {{ attributes.insurerCompany }}
+                                      </div>
+                              </div>
+                                        
+                              <div class="col-sm-6">
+                                            <label class="titleBold">Insured Amount<span class="mandatorySign">*</span></label>
+                                           
+                                            <input type="text" class="form-control" id="inputinsuredAmount" aria-describedby="newPasswordHelp" placeholder="3,000,000 " formControlName="insuredAmount" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.insuredAmount.valid }">
+                                                <div *ngIf="submitt && !TransferRegister.controls.insuredAmount.valid" class="invalid-feedback"> 
+                                                    {{ attributes.insuredAmount }}
+                                                </div>
+                              </div>
+
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                          <label class="titleBold">Valid Till<span class="mandatorySign">*</span></label>
+                                        
+                          <input min="{{myDate}}"  type="date"class="form-control" id="inputvalidTill" aria-describedby="newPasswordHelp" placeholder="2022-02-24" formControlName="validTill" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.validTill.valid }">
+                          <div *ngIf="submitt && !TransferRegister.controls.validTill.valid" class="invalid-feedback"> 
+                              {{ attributes.validTill }}
+                          </div>
+                      </div>
+                    </div>
+                    <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Documnet Hash</div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <label class="titleBold">Form 20<span class="mandatorySign">*</span></label>
+                          <input type="text" class="form-control" id="inputform20" aria-describedby="newPasswordHelp" placeholder="dsfsgergtbgvsd" formControlName="form20" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.form20.valid }">
+                         <div *ngIf="submitt && !TransferRegister.controls.form20.valid" class="invalid-feedback"> 
+                              {{ attributes.form20 }}
+                          </div>
+                      </div>
+                                                                                  
+                      <div class="col-sm-6">
+                     <label class="titleBold">Form 21<span class="mandatorySign">*</span></label>
+                          <input type="text" class="form-control" id="inputform21" aria-describedby="newPasswordHelp" placeholder="vadfvsvsrev" formControlName="form21" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.form21.valid }">
+                         <div *ngIf="submitt && !TransferRegister.controls.form21.valid" class="invalid-feedback"> 
+                          {{ attributes.form21 }}
+                         </div>				
+                      </div>
+                     
+                  </div>
+                  <div class="form-group row" >
+                      <div class="col-sm-6">
+                          <label class="titleBold">Temporary Registration<span class="mandatorySign">*</span></label>
+                           <input  type="text" class="form-control" placeholder="vdfsvsdbdgfbsfg" class="form-control" id="inputtemporaryRegistration" aria-describedby="newPasswordHelp" formControlName="temporaryRegistration" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.temporaryRegistration.valid }">
+                              <div *ngIf="submitt && !TransferRegister.controls.temporaryRegistration.valid" class="invalid-feedback"> 
+                                  {{ attributes.temporaryRegistration }}
+                              </div>				
+                       </div>
+                       <div class="col-sm-6">
+                        <label class="titleBold">insuranceDoc<span class="mandatorySign">*</span></label>
+                       <input type="text" class="form-control" id="inputinsuranceDoc" aria-describedby="newPasswordHelp" placeholder="fdsvbdgbdfgrbgf" formControlName="insuranceDoc" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.insuranceDoc.valid }">
+                        <div *ngIf="submitt && !TransferRegister.controls.insuranceDoc.valid" class="invalid-feedback"> 
+                         {{ attributes.insuranceDoc }}
+                      </div>				
+                       </div>
+                  </div>
+                  <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">New Owner</div>
+                  <div class="form-group row">
+                    <div class="col-sm-6">
+                      <label class="titleBold">Name<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputform20" aria-describedby="newPasswordHelp" placeholder="V" formControlName="name" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.form20.valid }">
+                       <div *ngIf="submitt && !TransferRegister.controls.form20.valid" class="invalid-feedback"> 
+                            {{ attributes.name }}
+                        </div>
+                    </div>
+                                                                                
+                    <!-- <div class="col-sm-6">
+                   <label class="titleBold">Gender<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputform21" aria-describedby="newPasswordHelp" placeholder="Male" formControlName="gender" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.form21.valid }">
+                       <div *ngIf="submitt && !TransferRegister.controls.form21.valid" class="invalid-feedback"> 
+                        {{ attributes.gender }}
+                       </div>				
+                    </div> -->
+                   
+                </div>
+                <!-- <div class="form-group row" >
+                    <div class="col-sm-6">
+                        <label class="titleBold">Contact Number<span class="mandatorySign">*</span></label>
+                         <input  type="text" class="form-control" placeholder="98765432210" class="form-control" id="inputtemporaryRegistration" aria-describedby="newPasswordHelp" formControlName="contact" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.temporaryRegistration.valid }">
+                            <div *ngIf="submitt && !TransferRegister.controls.temporaryRegistration.valid" class="invalid-feedback"> 
+                                {{ attributes.contact }}
+                            </div>				
+                     </div>
+                     <div class="col-sm-6">
+                      <label class="titleBold">Aadhar Number<span class="mandatorySign">*</span></label>
+                     <input type="text" class="form-control" id="inputinsuranceDoc" aria-describedby="newPasswordHelp" placeholder="787631163873 " formControlName="aadhar" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.insuranceDoc.valid }">
+                      <div *ngIf="submitt && !TransferRegister.controls.insuranceDoc.valid" class="invalid-feedback"> 
+                       {{ attributes.aadhar }}
+                    </div>				
+                     </div>
+                </div> -->
+            <div>
+                  <button type="submit" class="btn btncolour " style="float:right;text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">
+                      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                      Submit
+              </button>           
+            </div>
+                  </form> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    </sb-layout-dashboard>

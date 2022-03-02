@@ -1,0 +1,58 @@
+<sb-layout-dashboard [static]="true">
+    <div class="card-header py-3">
+    
+      
+      </div>
+    <sb-dashboard-head title="Register" [hideBreadcrumbs]="false">
+     
+    </sb-dashboard-head>
+    <p style="float: right;  margin-right: 1%;">
+      <a routerLink="/dashboard/add-register" class="btn btncolour btn-icon-split">
+        <span class="icon text-white-50">
+          <i class="fas fa-plus"></i>
+        </span>
+        <span class="text">Add New </span>
+      </a>
+      </p>
+ 
+    <div class="table-responsive">
+        <table class="table table-bordered" width="100%" cellspacing="0" >
+          <thead>
+            <tr>
+              <th>Engine Number</th>
+              <th>Chassis Number</th>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Aadhar Number</th>
+              <th>Date Of Birth </th>
+              <th>Insurer Company </th>
+              <th>Valid Till </th>
+              <th>Action</th>
+            </tr>
+          </thead>
+       
+          <tbody>
+            
+           
+            <tr *ngFor="let client of clients;let rowIndex = index">
+              <th>{{client.vehicleDetails.engineNumber}}</th>
+              <td>{{client.vehicleDetails.chassisNumber}} </td>
+              <td>{{client.vehicleDetails.date | date:'yyyy-MM-dd'}}</td>
+              <td>{{client.citizenDetails.name}}</td>
+              <td>{{client.citizenDetails.aadharNumber}}</td>
+              <td>{{client.citizenDetails.dateOfBirth | date:'yyyy-MM-dd'}}</td>
+              <td>{{client.insuranceDetails.insurerCompany}}</td>
+              <td>{{client.insuranceDetails.validTill | date:'yyyy-MM-dd'}}</td>
+              <td>
+                 <a routerLink="/dashboard/list-register" class="btn btncolour btn-circle btn-sm">
+                  <!-- <i class="fas fa-eye"></i> -->
+                  <i class="fa-duotone fa-eye"></i>
+                </a>
+               
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+</sb-layout-dashboard>

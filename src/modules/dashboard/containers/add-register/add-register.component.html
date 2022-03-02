@@ -1,0 +1,170 @@
+<sb-layout-dashboard [static]="true">
+  <button class="btn btncolour"  style="float: right;  margin-right: 1%;" (click)="backClicked();">BACK</button>
+    <sb-dashboard-head title="Register" [hideBreadcrumbs]="false"></sb-dashboard-head> 
+   
+    
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+     
+     
+    </div>
+    
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-xl-12 col-md-12 mb-4">
+        <div class="card shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col ">
+                  <form class="" [formGroup]="AddRegisterForm" (ngSubmit)="submit()" novalidate>
+                    <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Vehicle Details</div>
+                  <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label class="titleBold">Engine Number<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputengineNumber" aria-describedby="newPasswordHelp" placeholder="Engine Number..." formControlName="engineNumber" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.engineNumber.valid }">
+                        <div *ngIf="showErrors && !AddRegisterForm.controls.engineNumber.valid" class="invalid-feedback"> 
+                       {{ attributes.engineNumber }}
+                        </div> 
+                    </div>  
+                    <div class="col-sm-6">
+                        <label class="titleBold">Chassis Number<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputchassisNumber" aria-describedby="newPasswordHelp" placeholder="Chassis Number..." formControlName="chassisNumber" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.chassisNumber.valid }">
+                                            <div *ngIf="showErrors && !AddRegisterForm.controls.chassisNumber.valid" class="invalid-feedback"> 
+                                       {{ attributes.chassisNumber }}
+                                            </div>
+                    </div>  
+                                     
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label class="titleBold">Invoice Amount<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputinvoiceAmount" aria-describedby="newPasswordHelp" placeholder="Invoice Amount..." formControlName="invoiceAmount" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.invoiceAmount.valid }">
+                                            <div *ngIf="showErrors && !AddRegisterForm.controls.invoiceAmount.valid" class="invalid-feedback"> 
+                                       {{ attributes.invoiceAmount }}
+                                        </div>               
+                    </div>
+                                      
+                    <div class="col-sm-6">
+                        <label class="titleBold">Start Date<span class="mandatorySign">*</span></label>
+                        <input min="{{myDate}}" type="date" class="form-control" id="inputStartDate" aria-describedby="newPasswordHelp" placeholder="Start Date..." formControlName="startDate" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.startDate.valid }">
+                        <div *ngIf="showErrors && !AddRegisterForm.controls.startDate.valid" class="invalid-feedback"> 
+                        {{ attributes.startDate }}
+                            </div>                  
+                    </div>
+                  </div>
+                 
+                  <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Citizen Details</div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 ">
+                                          <label class="titleBold">Name<span class="mandatorySign">*</span></label>
+                                          <input type="text" class="form-control" id="inputname" aria-describedby="newPasswordHelp" placeholder="Name..." formControlName="name" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.name.valid }">
+                                <div *ngIf="showErrors && !AddRegisterForm.controls.name.valid" class="invalid-feedback"> 
+                                     {{ attributes.name }}
+                                      </div> 
+                    </div>
+                    <div class="col-sm-6">
+                                          <label class="titleBold">Date Of Birth<span class="mandatorySign">*</span></label>
+                                          <input min="{{myDate}}" type="date" class="form-control" id="inputdateOfBirth" aria-describedby="newPasswordHelp" placeholder="Date Of Birth" formControlName="dateOfBirth" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.dateOfBirth.valid }">
+                                          <div *ngIf="showErrors && !AddRegisterForm.controls.dateOfBirth.valid" class="invalid-feedback"> 
+                                     {{ attributes.dateOfBirth }}
+                                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 ">
+                                          <label class="titleBold">Aadhar Number<span class="mandatorySign">*</span></label>
+                                          <input type="text" class="form-control" id="inputaadharNumber" aria-describedby="newPasswordHelp" placeholder="Aadhar Number..." formControlName="aadharNumber" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.aadharNumber.valid }">
+                                          <div *ngIf="showErrors && !AddRegisterForm.controls.aadharNumber.valid" class="invalid-feedback"> 
+                                     {{ attributes.aadharNumber }}
+                                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                                          <label class="titleBold">Address Proof<span class="mandatorySign">*</span></label>
+                                          <input type="text" class="form-control" id="inputaddressProof" aria-describedby="newPasswordHelp" placeholder="Address Proof..." formControlName="addressProof" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.addressProof.valid }">
+                                          <div *ngIf="showErrors && !AddRegisterForm.controls.addressProof.valid" class="invalid-feedback"> 
+                                     {{ attributes.addressProof }}
+                                      </div>
+                    </div>
+                  </div>
+                 
+                  <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Insurance Details</div>              
+                  <div class="form-group row">
+                            <div class="col-sm-6 ">
+                                                <label class="titleBold">Insurer Company<span class="mandatorySign">*</span></label>
+                                                <input type="text" class="form-control" id="inputinsurerCompany" aria-describedby="newPasswordHelp" placeholder="Insurer Company..." formControlName="insurerCompany" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.insurerCompany.valid }">
+                                    <div *ngIf="showErrors && !AddRegisterForm.controls.insurerCompany.valid" class="invalid-feedback"> 
+                                        {{ attributes.insurerCompany }}
+                                    </div>
+                            </div>
+                                      
+                            <div class="col-sm-6">
+                                          <label class="titleBold">Insured Amount<span class="mandatorySign">*</span></label>
+                                         
+                                          <input type="text" class="form-control" id="inputinsuredAmount" aria-describedby="newPasswordHelp" placeholder="Insured Amount..." formControlName="insuredAmount" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.insuredAmount.valid }">
+                                              <div *ngIf="showErrors && !AddRegisterForm.controls.insuredAmount.valid" class="invalid-feedback"> 
+                                                  {{ attributes.insuredAmount }}
+                                              </div>
+                            </div>
+                    
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label class="titleBold">Valid Till<span class="mandatorySign">*</span></label>
+                                      
+                        <input min="{{myDate}}"  type="date"class="form-control" id="inputvalidTill" aria-describedby="newPasswordHelp" placeholder="Valid Till..." formControlName="validTill" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.validTill.valid }">
+                        <div *ngIf="showErrors && !AddRegisterForm.controls.validTill.valid" class="invalid-feedback"> 
+                            {{ attributes.validTill }}
+                        </div>
+                    </div>
+                  </div>
+                  <div style="text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">Documnet Hash</div>
+                  <div class="form-group row">
+                    <div class="col-sm-6">
+                      <label class="titleBold">Form 20<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputform20" aria-describedby="newPasswordHelp" placeholder="Form 20..." formControlName="form20" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.form20.valid }">
+                       <div *ngIf="showErrors && !AddRegisterForm.controls.form20.valid" class="invalid-feedback"> 
+                            {{ attributes.form20 }}
+                        </div>
+                    </div>
+                                                                                
+                    <div class="col-sm-6">
+                   <label class="titleBold">Form 21<span class="mandatorySign">*</span></label>
+                        <input type="text" class="form-control" id="inputform21" aria-describedby="newPasswordHelp" placeholder="Form 21..." formControlName="form21" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.form21.valid }">
+                       <div *ngIf="showErrors && !AddRegisterForm.controls.form21.valid" class="invalid-feedback"> 
+                        {{ attributes.form21 }}
+                       </div>				
+                    </div>
+                   
+                </div>
+                <div class="form-group row" >
+                    <div class="col-sm-6">
+                        <label class="titleBold">Temporary Registration<span class="mandatorySign">*</span></label>
+                         <input  type="text" class="form-control" placeholder="Temporary Registration" class="form-control" id="inputtemporaryRegistration" aria-describedby="newPasswordHelp" formControlName="temporaryRegistration" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.temporaryRegistration.valid }">
+                            <div *ngIf="showErrors && !AddRegisterForm.controls.temporaryRegistration.valid" class="invalid-feedback"> 
+                                {{ attributes.temporaryRegistration }}
+                            </div>				
+                     </div>
+                     <div class="col-sm-6">
+                      <label class="titleBold">insuranceDoc<span class="mandatorySign">*</span></label>
+                     <input type="text" class="form-control" id="inputinsuranceDoc" aria-describedby="newPasswordHelp" placeholder="Insurance Doc..." formControlName="insuranceDoc" [ngClass]="{ 'is-invalid': showErrors && !AddRegisterForm.controls.insuranceDoc.valid }">
+                      <div *ngIf="showErrors && !AddRegisterForm.controls.insuranceDoc.valid" class="invalid-feedback"> 
+                       {{ attributes.insuranceDoc }}
+                    </div>				
+                     </div>
+                </div>
+               
+                <button type="submit" class="btn btncolour " style="float:right;text-align: center;margin-top: 2%; margin-bottom: 2%;font-weight: bold; font-size: 21px;">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register 
+            </button>           
+                    
+                </form> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sb-layout-dashboard>

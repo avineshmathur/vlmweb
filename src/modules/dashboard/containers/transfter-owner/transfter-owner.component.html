@@ -1,0 +1,63 @@
+<sb-layout-dashboard [static]="true">
+    <sb-dashboard-head title="Transfer OwnerShip" [hideBreadcrumbs]="false"></sb-dashboard-head>
+    <form class="" [formGroup]="Transferowner" (ngSubmit)="submit()" novalidate>
+        <div class="row">
+            <div class="col-sm-3 ">
+                <label class="titleBold">Search From Chassis Number<span class="mandatorySign">*</span></label>
+                                
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputchassisNumber" aria-describedby="newPasswordHelp" placeholder="Chassis Number..." formControlName="chassisNumber" [ngClass]="{ 'is-invalid': showErrors && !QuerySearchForm.controls.chassisNumber.valid }">
+                <div *ngIf="showErrors && !QuerySearchForm.controls.chassisNumber.valid" class="invalid-feedback"> 
+           {{ attributes.chassisNumber }}
+                </div>
+                        
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary ">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Search 
+            </button> 
+            </div>
+        </div>
+            </form> 
+           <hr>
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" cellspacing="0" >
+                  <thead>
+                    <tr>
+                      <th>Engine Number</th>
+                      <th>Chassis Number</th>
+                      <th>Date</th>
+                      <th>Name</th>
+                      <th>Aadhar Number</th>
+                      <th>Date Of Birth </th>
+                      <th>Insurer Company </th>
+                      <th>Valid Till </th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+           
+                    <tr *ngFor="let column of columns">
+                      <th>{{column.engineNumber}}</th>
+                      <td>{{column.chassisNumber}} </td>
+                      <td>{{column.date | date:'yyyy-MM-dd'}}</td>
+                      <td>{{column.name}}</td>
+                      <td>{{column.aadharNumber}}</td>
+                      <td>{{column.dateOfBirth | date:'yyyy-MM-dd'}}</td>
+                      <td>{{column.insurerCompany}}</td>
+                      <td>{{column.validTill | date:'yyyy-MM-dd'}}</td>
+                      <td>
+                         <a routerLink="/dashboard/new-owner" class="btn btncolour btn-circle btn-sm">Transfer owner
+                          <i class="fas fa-eye"></i>
+                        </a>
+                       
+                      </td>
+                    </tr>
+                   
+                  </tbody>
+                  </table>
+                  </div>
+               
+</sb-layout-dashboard>
