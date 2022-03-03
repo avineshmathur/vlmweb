@@ -57,6 +57,17 @@ export class RegisterService {
         return httpOptions;
     }
 }
+getHttpOptionsNew(){
+    let httpOptions:any = {};
+    httpOptions = {
+        headers: new HttpHeaders({ 
+            'Content-Type': 'application/json; charset=utf-8',
+            'Accept': 'application/json'
+           
+        })
+    };    
+    return httpOptions;
+}
   saveRegister( postData: any) {
         
     return new Promise((resolve, reject) => {
@@ -71,8 +82,8 @@ export class RegisterService {
 getClients() {
     
     return new Promise((resolve, reject) => {
-       // this.http.get('https://jsonplaceholder.typicode.com/users', this.getHttpOptions(localStorage.getItem('currentSuperAdminToken'),Config.API_OTHERS_KEY,Config.SUBDOMAIN))
-       this.http.get(Config.API_BASE_PATH + 'queryAllRecords') 
+      // this.http.get('https://jsonplaceholder.typicode.com/users', this.getHttpOptionsNew())
+      this.http.get(Config.API_BASE_PATH + 'queryAllRecords', this.getHttpOptionsNew()) 
        .timeout(Config.TIMEOUT_SECONDS)
         .subscribe(res => {
            // console.log(res);
