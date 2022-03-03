@@ -22,12 +22,12 @@ export class ListRegisterComponent implements OnInit {
     this.getUsers();
   }
   getUsers() {
-    this.clients = Config.DummyData;
+    //this.clients = Config.DummyData;
     this.registerService.getClients().then((result) => {
         this.resData = result;
         console.log("the data");
         console.log(this.resData);
-       // this.clients = this.resData.data;
+       this.clients = this.resData.data;
       //  this.dtTrigger.next();
         },error => {
        // this.spinner.hide();
