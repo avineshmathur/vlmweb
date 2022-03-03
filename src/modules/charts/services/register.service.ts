@@ -78,6 +78,7 @@ getClients() {
            // console.log(res);
             resolve(res);
         }, (err) => {
+            alert(err.message);
             reject(err);
         });
     });
