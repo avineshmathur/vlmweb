@@ -169,7 +169,7 @@ export const Config = {
 			  }
 		  }
 	],
-	DummyDataSingle:[
+	DummyDataSingle:
 		{
 			"vehicleDetails": {
 			  "engineNumber": "7V 00001 189475",
@@ -196,5 +196,4 @@ export const Config = {
 			  }
 		  }
 	
-	],
 }

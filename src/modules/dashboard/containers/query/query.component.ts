@@ -57,7 +57,7 @@ submit() { //console.log(this.QuerySearchForm);
   }
   if (this.QuerySearchForm.valid) {
     this.showErrors = 0;
-   // this.clients = Config.DummyData;
+   // this.clients = Config.DummyDataSingle;
      // this.spinner.show();
       const form = this.QuerySearchForm;
        //  const formData: FormData = new FormData();      
