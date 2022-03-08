@@ -37,7 +37,7 @@
                     <div class="form-group row">
                       <div class="col-sm-6">
                           <label class="titleBold">Invoice Amount<span class="mandatorySign">*</span></label>
-                          <input type="text" class="form-control" id="inputinvoiceAmount" aria-describedby="newPasswordHelp" placeholder="5,000, 000" formControlName="invoiceAmount" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.invoiceAmount.valid }">
+                          <input type="text" class="form-control" id="inputinvoiceAmount" aria-describedby="newPasswordHelp" placeholder="" formControlName="invoiceAmount" [ngClass]="{ 'is-invalid': submitt && !TransferRegister.controls.invoiceAmount.valid }">
                                               <div *ngIf="submitt && !TransferRegister.controls.invoiceAmount.valid" class="invalid-feedback"> 
                                          {{ attributes.invoiceAmount }}
                                           </div>               

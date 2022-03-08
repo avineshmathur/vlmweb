@@ -58,7 +58,8 @@ export class NewOwnerComponent implements OnInit {
   
   this.TransferRegister.patchValue({
     engineNumber: this.clients.vehicleDetails.engineNumber,
-    chassisNumber:this.clients.vehicleDetails.chassisNumber
+    chassisNumber:this.clients.vehicleDetails.chassisNumber,
+    invoiceAmount:this.clients.vehicleDetails.invoicedAmount
   
   });
   }

@@ -174,7 +174,7 @@ export const Config = {
 			"vehicleDetails": {
 			  "engineNumber": "7V 00001 189475",
 			  "chassisNumber": "1HGBH41JXMN109186",
-			  "invoicedAmount": "5,000, 000",
+			  "invoicedAmount": "8,000, 000",
 			  "date": "2021-02-24"
 			  },
 			  "citizenDetails": {

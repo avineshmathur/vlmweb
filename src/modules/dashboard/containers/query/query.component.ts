@@ -60,9 +60,9 @@ submit() { //console.log(this.QuerySearchForm);
    // this.clients = Config.DummyData;
      // this.spinner.show();
       const form = this.QuerySearchForm;
-        // const formData: FormData = new FormData();      
+       //  const formData: FormData = new FormData();      
        
-        // formData.append('chassisNumber', this.QuerySearchForm.get('chassisNumber')?.value);
+       // formData.append('chassisNumber', this.QuerySearchForm.get('chassisNumber')?.value);
        
              const searchData={
                "chassisNumber":this.QuerySearchForm.get('chassisNumber')?.value
