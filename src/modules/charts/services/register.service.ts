@@ -99,7 +99,7 @@ queryRecordByChassisNumber(formData) {
     return new Promise((resolve, reject) => {
        // this.http.get('https://jsonplaceholder.typicode.com/users', this.getHttpOptions(localStorage.getItem('currentSuperAdminToken'),Config.API_OTHERS_KEY,Config.SUBDOMAIN))
       // this.http.get(Config.API_BASE_PATH+'country-list?subdomain=sms', this.commonService.getHttpOptions(localStorage.getItem('currentClinicToken'),Config.API_OTHERS_KEY,Config.SUBDOMAIN))
-       this.http.post(Config.API_BASE_PATH + 'queryRecordByChassisNumber',JSON.stringify(formData)) 
+       this.http.post(Config.API_BASE_PATH + 'queryRecordByChassisNumber',formData,this.getHttpOptionsNew()) 
        .timeout(Config.TIMEOUT_SECONDS)
         .subscribe(res => {
            // console.log(res);
