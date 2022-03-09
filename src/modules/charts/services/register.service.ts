@@ -71,7 +71,7 @@ getHttpOptionsNew(){
   saveRegister( postData: any) {
         console.log(postData);
     return new Promise((resolve, reject) => {
-        this.http.post(Config.API_BASE_PATH+'client/register', postData, this.getHttpOptionsNew())
+        this.http.post(Config.API_BASE_PATH+'createRecord', postData, this.getHttpOptionsNew())
         . timeout(Config.TIMEOUT_SECONDS).subscribe(res => {
             resolve(res);
         }, (err) => {
