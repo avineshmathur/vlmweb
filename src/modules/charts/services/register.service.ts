@@ -69,9 +69,9 @@ getHttpOptionsNew(){
     return httpOptions;
 }
   saveRegister( postData: any) {
-        
+        console.log(postData);
     return new Promise((resolve, reject) => {
-        this.http.post(Config.API_BASE_PATH+'client/register', postData, this.getHttpOptions(localStorage.getItem('currentClinicToken'),Config.API_OTHERS_KEY,Config.SUBDOMAIN))
+        this.http.post(Config.API_BASE_PATH+'client/register', postData, this.getHttpOptionsNew())
         . timeout(Config.TIMEOUT_SECONDS).subscribe(res => {
             resolve(res);
         }, (err) => {

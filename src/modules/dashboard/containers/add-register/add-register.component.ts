@@ -166,7 +166,33 @@ submit() {
         formData.append('form21', this.AddRegisterForm.get('form21')?.value);
         formData.append('temporaryRegistration', this.AddRegisterForm.get('temporaryRegistration')?.value);
         formData.append('insuranceDoc', this.AddRegisterForm.get('insuranceDoc')?.value);
-        this.registerService.saveRegister(formData).then((result) => {
+         let postData = {
+          "vehicleDetails": {
+            "chassisNumber":this.AddRegisterForm.get('chassisNumber')?.value,
+            "engineNumber": this.AddRegisterForm.get('engineNumber')?.value,
+            "invoicedAmount": this.AddRegisterForm.get('invoiceAmount')?.value,
+            "date": this.AddRegisterForm.get('startDate')?.value
+        },
+        "citizenDetails": {
+          "name": this.AddRegisterForm.get('name')?.value,
+          "dateOfBirth": this.AddRegisterForm.get('dateOfBirth')?.value,
+          "aadharNumber": this.AddRegisterForm.get('aadharNumber')?.value,
+          "addressProof":this.AddRegisterForm.get('addressProof')?.value
+      },
+      "insuranceDetails": {
+          "insurerCompany": this.AddRegisterForm.get('insurerCompany')?.value,
+          "insuredAmount": this.AddRegisterForm.get('insuredAmount')?.value,
+          "validT ill": this.AddRegisterForm.get('validTill')?.value
+      },
+      "documnetHash": {
+          "form20": this.AddRegisterForm.get('form20')?.value,
+          "form21": this.AddRegisterForm.get('form21')?.value,
+          "temporaryRegistration":this.AddRegisterForm.get('temporaryRegistration')?.value,
+          "insuranceDoc": this.AddRegisterForm.get('insuranceDoc')?.value
+      }
+      }
+
+        this.registerService.saveRegister(postData).then((result) => {
     		//	this.spinner.hide();
         		this.loading = false;
             if(result && result != ''){
