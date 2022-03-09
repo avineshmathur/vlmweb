@@ -147,25 +147,26 @@ submit() {
       }
   }
   if (this.AddRegisterForm.valid) {
+    console.log("heresfds");
     this.showErrors = 0;
      // this.spinner.show();
-      const form = this.AddRegisterForm;
-        const formData: FormData = new FormData();      
-        formData.append('engineNumber', this.AddRegisterForm.get('engineNumber')?.value);
-        formData.append('chassisNumber', this.AddRegisterForm.get('chassisNumber')?.value);
-        formData.append('invoicedAmount', this.AddRegisterForm.get('invoiceAmount')?.value);
-        formData.append('date', this.AddRegisterForm.get('startDate')?.value);
-        formData.append('name', this.AddRegisterForm.get('name')?.value);
-        formData.append('dateOfBirth', this.AddRegisterForm.get('dateOfBirth')?.value);        
-        formData.append('aadharNumber', this.AddRegisterForm.get('aadharNumber')?.value);
-        formData.append('addressProof', this.AddRegisterForm.get('addressProof')?.value);
-        formData.append('insurerCompany', this.AddRegisterForm.get('insurerCompany')?.value);
-        formData.append('insuredAmount', this.AddRegisterForm.get('insuredAmount')?.value);
-        formData.append('validTill', this.AddRegisterForm.get('validTill')?.value);        
-        formData.append('form20', this.AddRegisterForm.get('form20')?.value);
-        formData.append('form21', this.AddRegisterForm.get('form21')?.value);
-        formData.append('temporaryRegistration', this.AddRegisterForm.get('temporaryRegistration')?.value);
-        formData.append('insuranceDoc', this.AddRegisterForm.get('insuranceDoc')?.value);
+      // const form = this.AddRegisterForm;
+      //   const formData: FormData = new FormData();      
+      //   formData.append('engineNumber', this.AddRegisterForm.get('engineNumber')?.value);
+      //   formData.append('chassisNumber', this.AddRegisterForm.get('chassisNumber')?.value);
+      //   formData.append('invoicedAmount', this.AddRegisterForm.get('invoiceAmount')?.value);
+      //   formData.append('date', this.AddRegisterForm.get('startDate')?.value);
+      //   formData.append('name', this.AddRegisterForm.get('name')?.value);
+      //   formData.append('dateOfBirth', this.AddRegisterForm.get('dateOfBirth')?.value);        
+      //   formData.append('aadharNumber', this.AddRegisterForm.get('aadharNumber')?.value);
+      //   formData.append('addressProof', this.AddRegisterForm.get('addressProof')?.value);
+      //   formData.append('insurerCompany', this.AddRegisterForm.get('insurerCompany')?.value);
+      //   formData.append('insuredAmount', this.AddRegisterForm.get('insuredAmount')?.value);
+      //   formData.append('validTill', this.AddRegisterForm.get('validTill')?.value);        
+      //   formData.append('form20', this.AddRegisterForm.get('form20')?.value);
+      //   formData.append('form21', this.AddRegisterForm.get('form21')?.value);
+      //   formData.append('temporaryRegistration', this.AddRegisterForm.get('temporaryRegistration')?.value);
+      //   formData.append('insuranceDoc', this.AddRegisterForm.get('insuranceDoc')?.value);
          let postData = {
           "vehicleDetails": {
             "chassisNumber":this.AddRegisterForm.get('chassisNumber')?.value,
@@ -212,6 +213,7 @@ submit() {
 			//	this.toastr.error(error);
      		});
   }else{
+      console.log("here");
       this.loading = false;
     }
 }
