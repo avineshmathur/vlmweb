@@ -183,7 +183,7 @@ submit() {
       "insuranceDetails": {
           "insurerCompany": this.AddRegisterForm.get('insurerCompany')?.value,
           "insuredAmount": this.AddRegisterForm.get('insuredAmount')?.value,
-          "validT ill": this.AddRegisterForm.get('validTill')?.value
+          "validTill": this.AddRegisterForm.get('validTill')?.value
       },
       "documnetHash": {
           "form20": this.AddRegisterForm.get('form20')?.value,
